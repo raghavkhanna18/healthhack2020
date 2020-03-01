@@ -3,7 +3,7 @@ import java.util.Random;
 public class State {
     private int money = 100000000;
     private int turn_counter = 0;
-    private City c1 = new City(400000,0.25,10,true);
+    private City c1 = new City(400000,0.3,10,true);
     private City c2 = new City(21500000, 0, 0, false);
     private City c3 = new City(3500000, 0, 0,false);
     private City c4 = new City(280000, 0, 0,false);
@@ -22,6 +22,9 @@ public class State {
     }
     void change_city_growth(double growth_in, City city){
         city.change_growth_rate(growth_in);
+    }
+    void change_transfer_factor(double factor_in, City city){
+        city.change_transfer_factor(factor_in);
     }
 
     int get_turn_count(){
