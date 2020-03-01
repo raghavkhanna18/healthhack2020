@@ -6,8 +6,6 @@ import java.nio.file.Paths
 
 fun main() {
     val state: State = State()
-
-
     val path = "healthHack.csv"
     val reader: BufferedReader = Files.newBufferedReader(Paths.get(path))
     val csvParser = CSVParser(reader, CSVFormat.DEFAULT)
@@ -39,9 +37,10 @@ fun main() {
         newsList.addArticle(article)
 
     }
+    state._city1._name
     println("--------------------------------\n")
-    println("     City 1                  City 2     \n\n")
-    println("     City 3                  City 4     \n")
+    println("     ${state._city1._name}                  ${state._city2._name}\n\n")
+    println("     ${state._city3._name}                  ${state._city4._name}\n")
     println("--------------------------------\n")
     while (state.end_status() && !newsList.isEmpty()) {
         val article: Article = newsList.getAndRemoveRandomArticle()

@@ -4,18 +4,19 @@ public class State {
     public static final int INFECTED_START = 1000;
     private int money = 100000000;
     private int turn_counter = 0;
-    private City c1 = new City(11500000,0.3,INFECTED_START,true);
-    private City c2 = new City(21500000, 0, 0, false);
-    private City c3 = new City(3500000, 0, 0,false);
-    private City c4 = new City(280000, 0, 0,false);
+    private City c1 = new City(11500000, 0.3, INFECTED_START, true, "Wuhan");
+    private City c2 = new City(21500000, 0, 0, false, "Beijing");
+    private City c3 = new City(3500000, 0, 0, false, "Ürümqi");
+    private City c4 = new City(280000, 0, 0, false, "Lhasa");
 
-    State(){
+    State() {
     }
 
-    void change_money(int money_spent){
+    void change_money(int money_spent) {
         money = money - money_spent;
     }
-    void change_global_growth(double growth_in){
+
+    void change_global_growth(double growth_in) {
         c1.change_growth_rate(growth_in);
         c2.change_growth_rate(growth_in);
         c3.change_growth_rate(growth_in);
@@ -81,6 +82,7 @@ public class State {
 
 
         System.out.println("\n");
+        System.out.println("=============================================================================================================================================================================================================================================");
 
         System.out.println("Day " + turn_counter);
 
@@ -88,25 +90,25 @@ public class State {
 
         if(c1.get_infection_start()) {
             c1.turn();
-            System.out.println("City 1:");
+            System.out.println(c1.get_name() + ":");
             c1.print_info();
         }
 
         if (c2.get_infection_start()) {
             c2.turn();
-            System.out.println("City 2:");
+            System.out.println(c2.get_name() + ":");
             c2.print_info();
         }
 
         if (c3.get_infection_start()) {
             c3.turn();
-            System.out.println("City 3:");
+            System.out.println(c3.get_name() + ":");
             c3.print_info();
         }
 
         if (c4.get_infection_start()) {
             c4.turn();
-            System.out.println("City 4:");
+            System.out.println(c4.get_name() + ":");
             c4.print_info();
         }
     }

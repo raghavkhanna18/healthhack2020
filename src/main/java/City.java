@@ -13,12 +13,15 @@ public class City {
     private boolean cured = false;
     private boolean fully_infected = false;
     private double INITIAL_GROWTH_RATE;
-    City(int pop_in, double growth_in, double infected_in, boolean infection_start_in){
+    private String name;
+
+    City(int pop_in, double growth_in, double infected_in, boolean infection_start_in, String name){
         this.initial_population = pop_in;
         this.growth_rate = growth_in;
         this.INITIAL_GROWTH_RATE = growth_in;
         this.infected = infected_in;
         this.infection_start = infection_start_in;
+        this.name = name;
     }
 
     public void turn(){
@@ -97,5 +100,8 @@ public class City {
         System.out.println("Population = " + (int) Math.floor(get_population()));
         System.out.println("Infected = " + (int) Math.floor(infected) + " ----> " + String.format("%.4f", get_percent_infected()*100) + "%");
         System.out.println("Dead = " + (int) Math.floor(dead) + "\n");
+    }
+    public String get_name() {
+        return name;
     }
 }
