@@ -1,7 +1,7 @@
 import java.io.IOException
 import java.nio.channels.SelectionKey
 
-fun main() {
+/*fun main() {
     val server = Server()
     try {
         while (true) {
@@ -21,8 +21,18 @@ fun main() {
         }
     } catch (e: IOException) {
         e.printStackTrace()
-    }
+    }*/
 
+object Main {
+    @JvmStatic
+    fun main(args: Array<String>) {
+        val state: State = State()
+        while (state.end_status()) {
+            state.turn()
+        }
+    }
 }
+
+
 
 
