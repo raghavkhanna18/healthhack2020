@@ -104,4 +104,13 @@ public class State {
     boolean end_status(){
         return !c1.status_check() || !c2.status_check() || !c3.status_check() || !c4.status_check();
     }
+    void print_map(){
+        System.out.println("--------------------------------\n");
+        System.out.println("     " + (int)(c1.get_percent_infected()*100) + "------------------"  + (int)(c1.get_percent_infected()*100) + "     ");
+        for(int i = 0;i < 2;i++){
+            System.out.println("      |                    |      ");
+        }
+        System.out.println("     " + (int)(c3.get_percent_infected()*100) + "------------------"  + (int)(c4.get_percent_infected()*100) + "     \n");
+        System.out.println("--------------------------------\n");
+    }
 }

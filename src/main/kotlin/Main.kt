@@ -28,6 +28,7 @@ fun main(args: Array<String>) {
     val state: State = State()
     while (state.end_status()) {
             state.turn()
+            state.print_map()
     }
 }
 
