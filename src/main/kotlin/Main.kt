@@ -60,6 +60,8 @@ fun main(args: Array<String>) {
         state.turn()
         state.print_map()
     }
+
+    
 }
 
 
