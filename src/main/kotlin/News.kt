@@ -21,10 +21,14 @@ class News {
         return allArticles[pos]
     }
 
-    fun getAndRemoveArticle(pos: Int): Article {
-        var article: Article = allArticles[pos]
+    fun getAndRemoveRandomArticle(): Article {
+        val article: Article = allArticles.random()
         removeArticle(article)
         return article
+    }
+
+    fun isEmpty() : Boolean {
+        return allArticles.isEmpty()
     }
 
 }
