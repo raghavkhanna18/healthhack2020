@@ -23,15 +23,14 @@ import java.nio.channels.SelectionKey
         e.printStackTrace()
     }*/
 
-object Main {
-    @JvmStatic
-    fun main(args: Array<String>) {
-        val state: State = State()
-        while (state.end_status()) {
+
+fun main(args: Array<String>) {
+    val state: State = State()
+    while (state.end_status()) {
             state.turn()
-        }
     }
 }
+
 
 
 
