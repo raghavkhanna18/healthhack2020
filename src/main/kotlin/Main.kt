@@ -29,7 +29,7 @@ fun main(args: Array<String>) {
         val yesEco = csvRecord.get(7)
         val longterm = false
         // print the value to console
-        System.out.println("Record No - " + csvRecord.getRecordNumber())
+        //System.out.println("Record No - " + csvRecord.getRecordNumber())
         val article = Article(
             id = id.toInt(),
             headline = news,
@@ -42,9 +42,9 @@ fun main(args: Array<String>) {
             longTerm = longterm
         )
         newsList.addArticle(article)
-        println("-----------------------------")
+        /*println("-----------------------------")
         println("$article")
-        println("-----------------------------")
+        println("-----------------------------")*/
 //        client.send("---------------\n")
 //        client.send("$article")
 //        client.send("---------------\n")
@@ -58,15 +58,8 @@ fun main(args: Array<String>) {
 
         println(input)
         state.turn()
+        state.print_map()
     }
-
-    while (state.end_status()) {
-            state.turn()
-            state.print_map()
-    }
-
-
-
 }
 
 
