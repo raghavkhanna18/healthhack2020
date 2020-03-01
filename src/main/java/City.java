@@ -59,7 +59,7 @@ public class City {
         this.infected = infected_in;
     }
     public void change_growth_rate(double new_rate_in){
-        this.growth_rate = new_rate_in;
+        this.growth_rate = this.growth_rate * (1 + new_rate_in);
     }
     public void change_transfer_factor(double transfer_factor_in){
         this.transfer_factor = transfer_factor_in;
@@ -93,8 +93,8 @@ public class City {
     }
 
     public void print_info(){
-        System.out.println("Population = " + Math.floor(get_population()));
-        System.out.println("Infected = " + Math.floor(infected) + "----> " + get_percent_infected()*100 + "%");
-        System.out.println("Dead = " + Math.floor(dead) + "\n");
+        System.out.println("Population = " + (int) Math.floor(get_population()));
+        System.out.println("Infected = " + (int) Math.floor(infected) + " ----> " + String.format("%.4f", get_percent_infected()*100) + "%");
+        System.out.println("Dead = " + (int) Math.floor(dead) + "\n");
     }
 }

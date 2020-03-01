@@ -1,9 +1,10 @@
 import java.util.Random;
 
 public class State {
+    public static final int INFECTED_START = 1000;
     private int money = 100000000;
     private int turn_counter = 0;
-    private City c1 = new City(11500000,0.3,10,true);
+    private City c1 = new City(11500000,0.3,INFECTED_START,true);
     private City c2 = new City(21500000, 0, 0, false);
     private City c3 = new City(3500000, 0, 0,false);
     private City c4 = new City(280000, 0, 0,false);
@@ -55,21 +56,21 @@ public class State {
             c2.change_infection_start(true);
             System.out.println("City 2 has been infected! ------> " + spreadNewCity2);
             c2.change_growth_rate(0.25);
-            c2.change_infected(10);
+            c2.change_infected(INFECTED_START);
         }
 
         if (((c1.get_percent_infected()*c1.get_transfer_factor() + c2.get_percent_infected()*c2.get_transfer_factor() + c3.get_percent_infected()*c3.get_transfer_factor() + c4.get_percent_infected()*c4.get_transfer_factor())*1000) > spreadNewCity3 && !c3.get_infection_start()) {
             c3.change_infection_start(true);
             System.out.println("City 3 has been infected! ------> " + spreadNewCity3);
             c3.change_growth_rate(0.25);
-            c3.change_infected(10);
+            c3.change_infected(INFECTED_START);
         }
 
         if (((c1.get_percent_infected()*c1.get_transfer_factor() + c2.get_percent_infected()*c2.get_transfer_factor() + c3.get_percent_infected()*c3.get_transfer_factor() + c4.get_percent_infected()*c4.get_transfer_factor())*1000) > spreadNewCity4 && !c4.get_infection_start()) {
             c4.change_infection_start(true);
             System.out.println("City 4 has been infected! ------> " + spreadNewCity4);
             c4.change_growth_rate(0.25);
-            c4.change_infected(10);
+            c4.change_infected(INFECTED_START);
         }
 
 
@@ -77,7 +78,7 @@ public class State {
 
         System.out.println("Day " + turn_counter);
 
-        System.out.println("You have - $" + money);
+        System.out.println("You have: $" + money);
 
         if(c1.get_infection_start()) {
             c1.turn();
@@ -111,5 +112,9 @@ public class State {
         System.out.println("     " + (int)(c1.get_percent_infected()*100) + "                  "  + (int)(c2.get_percent_infected()*100) + "     \n\n");
         System.out.println("     " + (int)(c3.get_percent_infected()*100) + "                  "  + (int)(c4.get_percent_infected()*100) + "     \n");
         System.out.println("--------------------------------\n");
+    }
+
+    public int getMoney() {
+        return money;
     }
 }
