@@ -21,6 +21,12 @@ public class State {
         c3.change_growth_rate(growth_in);
         c4.change_growth_rate(growth_in);
     }
+    void change_global_transfer_factor(double transfer_factor_in){
+        c1.change_transfer_factor(transfer_factor_in);
+        c2.change_transfer_factor(transfer_factor_in);
+        c3.change_transfer_factor(transfer_factor_in);
+        c4.change_transfer_factor(transfer_factor_in);
+    }
     void change_city_growth(double growth_in, City city){
         city.change_growth_rate(growth_in);
     }

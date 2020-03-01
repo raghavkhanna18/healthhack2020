@@ -53,6 +53,7 @@ fun main() {
                     validInput = true
                     state.change_money(article.yesEco * 1000000)
                     state.change_global_growth(article.yesInf)
+                    state.change_global_transfer_factor(article.transferFactor)
                 }
                 "N", "No", "n", "no" -> {
                     validInput = true
