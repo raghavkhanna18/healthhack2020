@@ -12,10 +12,11 @@ public class City {
     private boolean infection_start;
     private boolean cured = false;
     private boolean fully_infected = false;
-
+    private double INITIAL_GROWTH_RATE;
     City(int pop_in, double growth_in, double infected_in, boolean infection_start_in){
         this.initial_population = pop_in;
         this.growth_rate = growth_in;
+        this.INITIAL_GROWTH_RATE = growth_in;
         this.infected = infected_in;
         this.infection_start = infection_start_in;
     }
@@ -59,7 +60,7 @@ public class City {
         this.infected = infected_in;
     }
     public void change_growth_rate(double new_rate_in){
-        this.growth_rate = this.growth_rate * (1 + new_rate_in);
+        this.growth_rate = this.growth_rate + INITIAL_GROWTH_RATE * new_rate_in;
     }
     public void change_transfer_factor(double transfer_factor_in){
         this.transfer_factor = transfer_factor_in;
