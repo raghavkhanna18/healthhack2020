@@ -39,6 +39,10 @@ fun main() {
         newsList.addArticle(article)
 
     }
+    println("--------------------------------\n")
+    println("     City 1                  City 2     \n\n")
+    println("     City 3                  City 4     \n")
+    println("--------------------------------\n")
     while (state.end_status() && !newsList.isEmpty()) {
         val article: Article = newsList.getAndRemoveRandomArticle()
         println("You have: $${state.money}")
